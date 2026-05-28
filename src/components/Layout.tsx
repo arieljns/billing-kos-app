@@ -61,7 +61,7 @@ export const Layout: React.FC<LayoutProps> = ({
 
   const navigationItems: NavigationItem[] = [
     { id: 'dashboard', label: 'Ringkasan', icon: <IconDashboard /> },
-    { id: 'rooms', label: 'Daftar Kamar', icon: <IconRooms /> },
+    { id: 'rooms', label: 'Kelola Properti', icon: <IconRooms /> },
     { id: 'tenants', label: 'Daftar Penghuni', icon: <IconTenants /> },
     { id: 'billing', label: 'Riwayat Keuangan', icon: <IconBilling /> },
     { id: 'settings', label: 'Pengaturan', icon: <IconSettings /> }
