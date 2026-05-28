@@ -1,0 +1,123 @@
+.kf-card {
+  background-color: var(--color-surface-lowest);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+  
+  /* Smooth slide-up entrance on render */
+  animation: kf-fade-slide-up 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes kf-fade-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Elevations */
+.kf-card-el-flat {
+  background-color: var(--color-surface-low);
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.kf-card-el-surface {
+  background-color: var(--color-surface-lowest);
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.kf-card-el-elevated {
+  background-color: var(--color-surface-lowest);
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-md);
+}
+
+/* Radius */
+.kf-card-rad-sm {
+  border-radius: var(--radius-sm);
+}
+
+.kf-card-rad-md {
+  border-radius: var(--radius-md);
+}
+
+.kf-card-rad-lg {
+  border-radius: var(--radius-lg);
+}
+
+/* Padding */
+.kf-card-pad-none {
+  padding: 0;
+}
+
+.kf-card-pad-sm {
+  padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.kf-card-pad-sm .kf-card-header,
+.kf-card-pad-sm .kf-card-footer {
+  padding: var(--spacing-sm) 0;
+}
+
+.kf-card-pad-md {
+  padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.kf-card-pad-md .kf-card-header,
+.kf-card-pad-md .kf-card-footer {
+  padding: var(--spacing-md) 0;
+}
+
+.kf-card-pad-lg {
+  padding: var(--spacing-lg) var(--spacing-xl);
+}
+
+.kf-card-pad-lg .kf-card-header,
+.kf-card-pad-lg .kf-card-footer {
+  padding: var(--spacing-lg) 0;
+}
+
+/* Inner Sections */
+.kf-card-header {
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-md);
+}
+
+.kf-card-body {
+  flex: 1;
+}
+
+.kf-card-footer {
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: var(--spacing-md);
+  gap: var(--spacing-md);
+}
+
+/* Interactive */
+.kf-card-interactive {
+  cursor: pointer;
+}
+
+.kf-card-interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary-light);
+}
+
+.kf-card-interactive:active {
+  transform: translateY(0);
+}

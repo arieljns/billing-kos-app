@@ -1,0 +1,151 @@
+.kf-balance-summary {
+  background: linear-gradient(135deg, var(--color-surface-lowest) 0%, var(--color-surface-low) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Optional top decorative indicator */
+.kf-balance-summary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: var(--color-success);
+}
+
+.kf-balance-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.kf-balance-main-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.kf-balance-title {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.kf-balance-amount-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-xs);
+}
+
+.kf-balance-currency {
+  font-family: var(--font-headline);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+}
+
+.kf-balance-amount {
+  font-family: var(--font-headline);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.kf-balance-trend-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.kf-balance-trend-badge {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+.kf-balance-trend-badge.is-positive {
+  background-color: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+.kf-balance-trend-badge.is-negative {
+  background-color: var(--color-error-bg);
+  color: var(--color-error);
+}
+
+.kf-balance-trend-label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.kf-balance-details-divider {
+  height: 1px;
+  background-color: var(--color-border);
+  width: 100%;
+}
+
+/* Mobile first: 1 column details by default */
+.kf-balance-details-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+}
+
+.kf-balance-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.kf-balance-detail-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+
+.kf-balance-detail-value {
+  font-family: var(--font-headline);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.kf-balance-detail-value.val-success {
+  color: var(--color-success);
+}
+
+.kf-balance-detail-value.val-error {
+  color: var(--color-error);
+}
+
+.kf-balance-actions {
+  display: flex;
+  flex-direction: column; /* Stacked buttons on mobile */
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--spacing-md);
+}
+
+/* Larger screens: min-width 481px */
+@media (min-width: 481px) {
+  .kf-balance-details-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .kf-balance-actions {
+    flex-direction: row; /* Horizontal buttons on wider screens */
+  }
+}

@@ -1,0 +1,289 @@
+.kf-layout-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+/* Base Sidebar: Mobile off-screen drawer by default */
+.kf-sidebar {
+  width: 260px;
+  background-color: var(--color-surface-lowest);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-100%);
+  z-index: 1000;
+  transition: transform var(--transition-normal);
+}
+
+.kf-sidebar.is-mobile-open {
+  transform: translateX(0);
+}
+
+.kf-sidebar-header {
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.kf-sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.kf-sidebar-logo-icon {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  font-family: var(--font-headline);
+  font-weight: 800;
+  font-size: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kf-sidebar-logo-text {
+  font-family: var(--font-headline);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.kf-sidebar-nav {
+  flex: 1;
+  padding: var(--spacing-md) var(--spacing-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.kf-sidebar-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: 12px var(--spacing-md); /* Slightly larger for easier tap targets on mobile */
+  background: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  font-size: 15px; /* Sized for readability */
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.kf-sidebar-nav-btn:hover {
+  background-color: var(--color-surface-low);
+  color: var(--color-text-primary);
+}
+
+.kf-sidebar-nav-btn.is-active {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Sidebar Footer / User section */
+.kf-sidebar-footer {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.kf-sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.kf-user-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kf-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.kf-user-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.kf-user-role {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+/* Main Area */
+.kf-main-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Header Styling - Base Mobile: Hamburger menu trigger visible */
+.kf-header {
+  height: 64px;
+  background-color: var(--color-surface-lowest);
+  border-bottom: 1px solid var(--color-border);
+  padding: 0 var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+}
+
+.kf-header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.kf-mobile-menu-toggle {
+  display: flex;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-primary);
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.kf-mobile-menu-toggle:hover {
+  background-color: var(--color-surface-low);
+}
+
+.kf-header-title {
+  font-family: var(--font-headline);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+}
+
+.kf-header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.kf-theme-toggle-btn {
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  width: 38px;
+  height: 38px; /* High accessibility tap target */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.kf-theme-toggle-btn:hover {
+  background-color: var(--color-surface-low);
+  color: var(--color-text-primary);
+  border-color: var(--color-text-muted);
+}
+
+.kf-header-divider {
+  width: 1px;
+  height: 20px;
+  background-color: var(--color-border);
+}
+
+.kf-header-profile {
+  display: flex;
+  align-items: center;
+}
+
+.kf-header-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Content Pane */
+.kf-content {
+  padding: var(--spacing-md);
+  flex: 1;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* Sidebar Backdrop overlay for mobile menu drawer */
+.kf-sidebar-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(9, 20, 38, 0.4);
+  backdrop-filter: blur(2px);
+  z-index: 999;
+}
+
+/* ==========================================================================
+   Desktop Styling: min-width 769px
+   ========================================================================== */
+@media (min-width: 769px) {
+  .kf-mobile-menu-toggle {
+    display: none;
+  }
+  
+  .kf-sidebar {
+    position: sticky;
+    transform: none;
+    z-index: 100;
+  }
+  
+  .kf-header {
+    padding: 0 var(--spacing-lg);
+  }
+  
+  .kf-header-title {
+    font-size: 22px;
+  }
+  
+  .kf-content {
+    padding: var(--spacing-lg);
+  }
+}

@@ -1,0 +1,90 @@
+.kf-status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 4px var(--spacing-sm);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  border: 1px solid transparent;
+  width: fit-content;
+  text-transform: capitalize;
+}
+
+/* Variants */
+.kf-status-chip-success {
+  background-color: var(--color-success-bg);
+  border-color: var(--color-success-light);
+  color: var(--color-success);
+}
+.kf-status-chip-success .kf-chip-dot {
+  background-color: var(--color-success);
+  box-shadow: 0 0 0 2px rgba(0, 108, 73, 0.2);
+}
+
+.kf-status-chip-error {
+  background-color: var(--color-error-bg);
+  border-color: var(--color-error-light);
+  color: var(--color-error);
+}
+.kf-status-chip-error .kf-chip-dot {
+  background-color: var(--color-error);
+  box-shadow: 0 0 0 2px rgba(186, 26, 26, 0.2);
+}
+
+.kf-status-chip-warning {
+  background-color: #fffbeb;
+  border-color: #fde68a;
+  color: #b45309;
+}
+.kf-status-chip-warning .kf-chip-dot {
+  background-color: #d97706;
+  box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.2);
+}
+
+.kf-status-chip-info {
+  background-color: var(--color-surface-low);
+  border-color: var(--color-surface-container);
+  color: var(--color-primary);
+}
+.kf-status-chip-info .kf-chip-dot {
+  background-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(30, 41, 59, 0.2);
+}
+
+.kf-status-chip-neutral {
+  background-color: #f1f5f9;
+  border-color: #e2e8f0;
+  color: var(--color-text-secondary);
+}
+.kf-status-chip-neutral .kf-chip-dot {
+  background-color: var(--color-text-muted);
+  box-shadow: 0 0 0 2px rgba(117, 119, 125, 0.2);
+}
+
+/* Pulsing Dot */
+.kf-chip-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  display: inline-block;
+  animation: kf-pulse 1.5s infinite ease-in-out;
+  flex-shrink: 0;
+}
+
+@keyframes kf-pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+}
