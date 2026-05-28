@@ -18,6 +18,23 @@ import {
 } from './page';
 
 function App() {
+  // Splash screen states
+  const [splashVisible, setSplashVisible] = useState(true);
+  const [splashFadeOut, setSplashFadeOut] = useState(false);
+
+  useEffect(() => {
+    const fadeTimer = setTimeout(() => {
+      setSplashFadeOut(true);
+    }, 1800);
+    const removeTimer = setTimeout(() => {
+      setSplashVisible(false);
+    }, 2200);
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(removeTimer);
+    };
+  }, []);
+
   // Theme management state
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
     const saved = localStorage.getItem('kf-theme');
@@ -240,7 +257,20 @@ function App() {
   };
 
   return (
-    <Layout
+    <>
+      {splashVisible && (
+        <div className={`kf-splash-screen ${splashFadeOut ? 'fade-out' : ''}`}>
+          <div className="kf-splash-content">
+            <img src="/logo.png" alt="KosFlow Logo" className="kf-splash-logo" />
+            <h1 className="kf-splash-title">KosFlow Suite</h1>
+            <p className="kf-splash-subtitle">Sistem Manajemen Properti Praktis</p>
+            <div className="kf-splash-loader">
+              <div className="kf-splash-loader-bar" />
+            </div>
+          </div>
+        </div>
+      )}
+      <Layout
       currentPageId={currentPage}
       onPageChange={setCurrentPage}
       theme={theme}
@@ -362,7 +392,8 @@ function App() {
         )}
       </Modal>
 
-    </Layout>
+     </Layout>
+    </>
   );
 }
 

@@ -1,0 +1,17 @@
+{
+  "short_name": "KosFlow",
+  "name": "KosFlow Suite: Sistem Manajemen Properti",
+  "icons": [
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0f172a",
+  "theme_color": "#0d9488",
+  "display": "standalone",
+  "orientation": "portrait"
+}

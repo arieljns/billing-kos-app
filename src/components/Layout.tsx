@@ -79,7 +79,7 @@ export const Layout: React.FC<LayoutProps> = ({
       <aside className={`kf-sidebar ${mobileMenuOpen ? 'is-mobile-open' : ''}`}>
         <div className="kf-sidebar-header">
           <div className="kf-sidebar-logo">
-            <span className="kf-sidebar-logo-icon">KF</span>
+            <img src="/logo.png" alt="KosFlow Logo" style={{ width: '32px', height: '32px', borderRadius: 'var(--radius-sm)' }} />
             <span className="kf-sidebar-logo-text">{brandName}</span>
           </div>
         </div>
